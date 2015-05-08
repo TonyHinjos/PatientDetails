@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.maven.plugins:maven-plugins:23">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
