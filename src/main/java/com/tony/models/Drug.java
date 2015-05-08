@@ -13,20 +13,21 @@ public class Drug {
     @GeneratedValue
 
     @Column(name = "drug_id")
-    private String drugid;
-
-    @Column(name = "patient_id")
-    private String patientid;
+    private int id;
 
     @Column(name ="drug_name")
     private String drugname;
 
-    public String getDrugid() {
-        return drugid;
+    private String patientid;
+
+    public int getId()
+    {
+        return id;
     }
 
-    public void setDrugid(String drugid) {
-        this.drugid = drugid;
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
     public String getPatientid() {

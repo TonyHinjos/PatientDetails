@@ -46,7 +46,8 @@ public class DrugDaoImpl implements DrugDao{
     public List<Drug> getList() {
         Session session = sessionFactory.openSession();
         @SuppressWarnings("unchecked")
-        List<Drug> drugList = session.createQuery("from Drug").list();
+        String hql = "select all from Drug e " + "INNER JOIN e.patient_id Patient";
+        List<Drug> drugList = session.createQuery(hql).list();
         session.close();
         return drugList;
     }

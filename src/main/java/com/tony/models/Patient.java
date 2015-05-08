@@ -13,42 +13,19 @@ public class Patient {
     @GeneratedValue
 
     @Column(name = "patient_id")
-    private String patientid;
+    private int id;
+    @Column(name ="patient_fname")
 
-    @Column(name = "drug_id")
-    private String drugid;
-
-    @Column(name = "patient_fname")
     private String fname;
 
-    @Column(name ="patient_lname")
     private String lname;
 
-    @Column(name ="patient_email")
     private String email;
 
-
-    @Column(name ="date_birth")
     private String datebirth;
 
-    @Column(name ="creation_date")
-    private String creation;
-
-    public String getPatientid() {
-        return patientid;
-    }
-
-    public void setPatientid(String patientid) {
-        this.patientid = patientid;
-    }
-
-    public String getDrugid() {
-        return drugid;
-    }
-
-    public void setDrugid(String drugid) {
-        this.drugid = drugid;
-    }
+    public int getId(){return id;}
+    public void setId(int id){this.id =id;}
 
     public String getFname() {
         return fname;
@@ -83,11 +60,5 @@ public class Patient {
         this.datebirth = datebirth;
     }
 
-    public String getCreation() {
-        return creation;
-    }
 
-    public void setCreation(String creation) {
-        this.creation = creation;
-    }
 }

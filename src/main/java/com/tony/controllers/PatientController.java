@@ -30,28 +30,28 @@ public class PatientController {
         return "details";
     }
 
-    @RequestMapping("/drugs")
-    public String patient_drugs(Model model)
-    {
-        model.addAttribute("message","Drugs prescribed to patient");
-        return "drugs";
-    }
-//    @RequestMapping("/drugs")
-//    public ModelAndView patient_drugs()
+    //    @RequestMapping("/drugs")
+//    public String patient_drugs(Model model)
 //    {
-//
-//        ModelAndView model = new ModelAndView();
-//        model.addObject("msg","Drugs prescribed to patients");
-//        model.setViewName("drugs");
-//
-//        return model;
+//        model.addAttribute("message","Drugs prescribed to patient");
+//        return "drugs";
 //    }
+    @RequestMapping("/drugs")
+    public ModelAndView patient_drugs()
+    {
+        ModelAndView model = new ModelAndView();
+        List<Patient> patientList = patientService.getList();
+        model.addObject("patientList", patientList);
+        model.setViewName("drug");
+
+        return model;
+    }
 
     @RequestMapping("/create")
     public ModelAndView create(@RequestParam(value = "patient_fname", required = false) String fname,
                                @RequestParam(value = "patient_lname", required = false) String lname,
                                @RequestParam(value = "patient_email", required = false) String email,
-                              @RequestParam(value = "date_birth", required = false) String datebirth
+                               @RequestParam(value = "date_birth", required = false) String datebirth
     )
     {
         ModelAndView model = new ModelAndView();
@@ -59,7 +59,7 @@ public class PatientController {
         Patient patient = new Patient();
         patient.setFname(fname);
         patient.setLname(lname);
-
+        patient.setEmail(email);
         patient.setDatebirth(datebirth);
         patientService.insertRow(patient);
 
@@ -79,7 +79,7 @@ public class PatientController {
         drug.setPatientid(patientid);
         drugService.insertRow(drug);
 
-        model.setViewName("drugs");
+        model.setViewName("drug");
         return model;
     }
 
