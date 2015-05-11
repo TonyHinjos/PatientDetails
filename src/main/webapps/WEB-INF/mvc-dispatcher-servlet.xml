@@ -12,6 +12,8 @@
 
     <context:component-scan base-package="com.tony.controllers"/>
 
+
+
     <mvc:annotation-driven/>
 
     <!--database-->
@@ -30,8 +32,8 @@
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
-                <value>com.tony.models.Drug</value>
                 <value>com.tony.models.Patient</value>
+                <value>com.tony.models.Drug</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -50,12 +52,10 @@
     <bean id="persistenceExceptionTranslationPostProcessor"
           class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-    <bean id="PatientDaoImpl" class="com.tony.dao.impl.PatientDaoImpl" />
-    <bean id="PatientServiceImpl" class="com.tony.services.impl.PatientServiceImpl" />
-
-    <bean id="DrugDaoImpl" class="com.tony.dao.impl.DrugDaoImpl" />
-    <bean id="DrugServiceImpl" class="com.tony.services.impl.DrugServiceImpl" />
-
+    <bean id="patientDaoImpl" class="com.tony.dao.impl.PatientDaoImpl" />
+    <bean id="patientsServiceImpl" class="com.tony.services.impl.PatientServiceImpl" />
+    <bean id="drugsDaoImpl" class="com.tony.dao.impl.DrugDaoImpl" />
+    <bean id="drugsServiceImpl" class="com.tony.services.impl.DrugServiceImpl" />
 
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
